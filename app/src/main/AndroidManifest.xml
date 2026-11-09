@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+
+    <!-- Android 11+: package visibility so we can detect installed emulators -->
+    <queries>
+        <package android:name="org.dolphinemu.dolphinemu" />
+        <package android:name="org.ppsspp.ppsspp" />
+        <package android:name="org.ppsspp.ppssppgold" />
+        <package android:name="org.azahar_emu.azahar" />
+        <package android:name="me.magnum.melonds" />
+        <package android:name="xyz.aethersx2.android" />
+        <package android:name="org.vita3k.emulator" />
+        <package android:name="dev.eden.eden_emulator" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:label="ShelfDeck"
+        android:theme="@style/Theme.ShelfDeck">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation|uiMode"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
